@@ -1,5 +1,3 @@
-Aqui está a versão revisada do seu texto com uma formatação mais clara e polida para um `README.md`:  
-
 ---
 
 # 📌 Configuração do Ambiente  
