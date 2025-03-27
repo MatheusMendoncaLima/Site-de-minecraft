@@ -15,6 +15,17 @@ CREATE DATABASE minezin;
 
 USE minezin;
 
+CREATE TABLE `registros` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(16) NOT NULL,
+  `email` varchar(329) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `original` tinyint(1) NOT NULL,
+  `bedrock` tinyint(1) DEFAULT NULL,
+  `avatar` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 CREATE TABLE `tokens` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -28,16 +39,6 @@ CREATE TABLE `tokens` (
   CONSTRAINT `tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `registros` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `registros` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(16) NOT NULL,
-  `email` varchar(329) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `original` tinyint(1) NOT NULL,
-  `bedrock` tinyint(1) DEFAULT NULL,
-  `avatar` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `confirmacao_de_email` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
